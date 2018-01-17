@@ -1,0 +1,58 @@
+page-login {
+    $padding: 12px;
+    .content {
+        background: url('../assets/imgs/login-bg.jpg');
+        background-size: 100% 100%;
+        .scroll-content {
+            padding: 0 !important;
+        }
+    }
+    .content-filter {
+        position: fixed;
+        z-index: -1;
+        background-color: rgba(0,0,0,.5);
+        height: 100%;
+        width: 100%;
+    }
+    .title {
+        padding: 0 $padding;
+        text-align: center;
+        height: 350px;
+        .logo {
+            height: 125px;
+        }
+        .text {
+            color: #eceff2;
+            font-size: 24px;
+        }
+    }
+    .grid {
+        padding: 0 $padding;
+        .row {
+            margin-bottom: 7px;
+        }
+        input {
+            height: 44px;
+            width: 100%;
+            color: #eceff2;
+            padding: 12px;
+            margin: 0;
+            border-radius: 4px;
+            background: rgba(0,0,0,.5);
+        }
+        button {
+            height: 44px;
+            width: 100%;
+            border-radius: 4px;
+            &.get-code {
+                color: #448aca;
+                background: rgba(0,0,0,.5);
+            }
+            &.login {
+                font-size: 18px;
+                color: #eceff2;
+                background: #448aca;
+            }
+        }
+    }
+}

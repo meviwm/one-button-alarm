@@ -1,0 +1,127 @@
+page-index {
+    $boxheight: 400px;
+    $buttonheight: 183px;
+    .content {
+        .filter-bg {
+            position: fixed;
+            top: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                filter: blur(12px);
+            }
+        }
+        .title {
+            color: #a0a1a3;
+            text-align: center;
+            font-size: 20px;
+            height: 44px;
+            line-height: 44px;
+            margin: 12px;
+        }
+        .button-box {
+            // position: relative;
+            // display: flex;
+            // align-items: center; /*定义body的元素垂直居中*/
+            // justify-content: center; /*定义body的里的元素水平居中*/
+            // height: $boxheight;
+            // width: 100%;
+            // // line-height: $boxheight;
+            // text-align: center;
+            //***********************************************
+            position: relative;
+            -ms-flex-align: center;
+            -ms-flex-pack: center;
+            height: 400px;
+            width: 100%;
+            text-align: center;
+            overflow: hidden;
+            .alarm-button {
+                // height: $buttonheight;
+                // width: $buttonheight;
+                // line-height: $buttonheight;
+                // padding: 0;
+                // // margin: 0 auto;
+                // border-radius: 50%;
+                // background: #447aca;
+                // font-size: 26px;
+                // color: #eceff2;
+                //****************************************************
+                height: 183px;
+                width: 183px;
+                line-height: 183px;
+                padding: 0;
+                border-radius: 50%;
+                background: #447aca;
+                font-size: 26px;
+                color: #eceff2;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+            .after {
+                // content: "";
+                // position: absolute;
+                // z-index: -1;
+                // border-radius: 50%;
+                // display: block;
+                // animation: ripple 1s infinite;
+                //***********************************************************
+                content: "";
+                position: absolute;
+                z-index: -1;
+                border-radius: 50%;
+                display: block;
+                -webkit-animation: ripple 1s infinite;
+                animation: ripple 1s infinite;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+        }
+        .col {
+            height: 80px;
+            text-align: center;
+            img {
+                display: block;
+                width: 35px;
+                height: 35px;
+                margin: 0 auto;
+            }
+            div {
+                color: #eceff2;
+                margin-top: 9px;
+                font-size: 16px;
+            }
+        }
+    }
+    @keyframes ripple {
+        // 0% {
+        //     width: 0;
+        //     height: 0;
+        //     background: rgba(68,122,202,1);
+        // }
+        // 100% {
+        //     width: $boxheight + 100px;
+        //     height: $boxheight + 100px;
+        //     background: rgba(68,122,202,0);
+        // }
+        //******************************************************
+        0% {
+            transform: scale(0, 0);
+            background: #447aca;
+        }
+        100% {
+            background: rgba(68, 122, 202, 0);
+            transform: scale(100%, 100%);
+        }
+    }
+}

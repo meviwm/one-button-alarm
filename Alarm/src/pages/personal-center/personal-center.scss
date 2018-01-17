@@ -1,0 +1,50 @@
+page-personal-center {
+
+    .toolbar-background {
+        background: #448aca;
+        color: #eceff2;
+    }
+
+    .content {
+        position: relative;
+        .img-bg {
+            width: 100%;
+            height: 190px;
+            background: #448aca;
+            box-shadow: 1px 1px 10px #888;
+        }
+        .avater {
+            width: 40%;
+            margin: -20% auto 0;
+            .img-box {
+                width: 100%;
+                height: 0px;
+                padding-bottom: 100%;
+                overflow:hidden;
+                margin: 0;
+                border-radius: 50%;
+                box-shadow: 1px 1px 10px #ccc;
+                position:relative;
+                img {
+                    position: absolute;
+                }
+            }
+
+        }
+        .grid {
+            .col {
+                font-size: 16px;
+                color: #47494b;
+                &:first-child {
+                    text-align: right;
+                    color: #a0a1a3;
+                }
+            }
+        }
+        .login-out {
+            margin-top: 50px;
+            text-align: center;
+            color: #448aca;
+        }
+    }
+}

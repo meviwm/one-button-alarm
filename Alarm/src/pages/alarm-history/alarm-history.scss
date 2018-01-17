@@ -1,0 +1,62 @@
+page-alarm-history {
+
+    .back-button {
+        color: #eceff2;
+    }
+
+    .toolbar-title {
+        text-align: center;
+        color: #eceff2;
+    }
+
+    .toolbar {
+        position: relative;
+        .toolbar-content {
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+        }
+    }
+
+    .toolbar-background {
+        background: #448aca;
+        color: #eceff2;
+    }
+
+    .list {
+        .item-block {
+            position: relative;
+            min-height: 1px;
+            max-height: 34px;
+            color: #47494b;
+            font-size: 15px;
+            .item-key {
+                color: #a0a1a3;
+            }
+            .label {
+                max-width: 85%;
+                min-height: 24px;
+                overflow: hidden;
+                text-overflow:ellipsis;
+                white-space: nowrap;
+            }
+            button {
+                position: absolute;
+                z-index: 5;
+                right: 0;
+                width: 50px;
+                height: 24px;
+                background: none;
+                img {
+                    width: 22px;
+                    height: 22px;
+                }
+            }
+            &:first-child {
+                background-color: #54c8a3;
+                color: #eceff2;
+                font-size: 18px;
+            }
+        }
+    }
+}

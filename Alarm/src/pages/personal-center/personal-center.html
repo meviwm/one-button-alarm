@@ -1,0 +1,60 @@
+<!--
+  Generated template for the PersonalCenterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>个人中心</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="img-bg"></div>
+  <div class="avater">
+    <div class="img-box" (click)="getPicatu()">
+      <img [ngStyle]="{'display':b_edit?'none':'block'}" [src]="showImgUrl + officer.officerHead" alt="">
+      <img [ngStyle]="{'display':b_edit?'block':'none'}" [src]="showImgUrl + officerCopy.officerHead" alt="">
+    </div>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 offset-3 style="text-align:center;padding:0">
+        <button ion-button icon-start outline clear style="height: 18px; color: #a5a5a5;" (click)="canEdit()">
+          <ion-icon name="create"></ion-icon>
+          修改资料
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row (click)="editName()">
+      <ion-col col-6>用户名</ion-col>
+      <ion-col col-6>{{b_edit ? officerCopy.officerName : officer.officerName}}</ion-col>
+    </ion-row>
+    <ion-row (click)="editGender()">
+      <ion-col col-6>性别</ion-col>
+      <ion-col col-6>{{GENDER[b_edit ? officerCopy.gender : officer.gender]}}</ion-col>
+    </ion-row>
+    <ion-row (click)="editAge()">
+      <ion-col col-6>年龄</ion-col>
+      <ion-col col-6>{{b_edit ? officerCopy.age : officer.age}}</ion-col>
+    </ion-row>
+    <ion-row *ngIf="b_edit">
+      <ion-col col-3 offset-3>
+        <button ion-button outline clear style="height: 18px; color: #488aff;" (click)="save()">
+          保存
+        </button>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button outline clear style="height: 18px; color: #a5a5a5;" (click)="canEdit()">
+          取消
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="login-out" (click)="loginOut()">
+    <img src="assets/imgs/login-out.png" alt="">
+    <div>退出登录</div>
+  </div>
+</ion-content>

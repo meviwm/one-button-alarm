@@ -1,0 +1,104 @@
+<!--
+  Generated template for the ChatPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      报警中
+    </ion-title>
+    <button color="royal" (click)="notCanCancelAlarm()">
+      <img src="assets/imgs/exit.png" alt="">
+    </button>
+  </ion-navbar>
+  <!--<div class="cancel-alarm" *ngIf="canCancelAlarm" (click)="notCanCancelAlarm()">
+  &lt;!&ndash;<div class="cancel-alarm" [ngStyle]="{'height':canCancelAlarm?'100%':'0'}" (click)="notCanCancelAlarm()">&ndash;&gt;
+    <div class="button-box">
+      <button ion-button block color="blue" (click)="cancelAlarm($event)">取消报警</button>
+      <button ion-button block color="live" (click)="endAlarm($event)">结束报警</button>
+      <button ion-button block clear>
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </div>
+  </div>-->
+
+</ion-header>
+<ion-content>
+
+  <div class="message-wrap">
+
+    <div *ngFor="let msg of msgList" class="message" [class.left]=" msg.userImAccount === toUser.imAccount "
+         [class.right]=" msg.userImAccount === user.imAccount ">
+      <img class="user-img" [src]="msg.userAvatar" alt="" src="">
+      <ion-spinner name="dots" *ngIf="msg.status === 'pending'"></ion-spinner>
+      <div class="msg-detail">
+        <!-- <div class="msg-info">
+            <p>{{msg.message}}</p>
+        </div> -->
+        <div class="msg-content" [ngSwitch]="msg.type">
+          <span class="triangle"></span>
+          <p *ngSwitchCase="1" class="line-breaker ">{{msg.message}}</p>
+          <p *ngSwitchCase="3" class="line-breaker ">{{msg.message}}</p>
+          <!-- <p *ngSwitchCase="4" class="line-breaker font-italic" (click)="playAudio(msg.message, msg.messageId)"> -->
+          <p *ngSwitchCase="4" class="line-breaker font-italic" (click)="playAudio(msg.message, msg.messageId)">
+            <img *ngIf="msg.userImAccount === toUser.imAccount" [src]="this.voiceImgUrl['left' + msg.src]" alt="">
+            <img *ngIf="msg.userImAccount === user.imAccount" [src]="this.voiceImgUrl['right' + msg.src]" alt="">
+          </p>
+          <p *ngSwitchCase="7" class="line-breaker font-italic" (click)="openFile(msg.message, msg.messageId)">[视频]</p>
+          <div *ngSwitchCase="8" class="font-italic">
+            <img *ngIf="msg.status === 'success'" style="width: 30vw" [src]="imgUrl + msg.message" alt=""/>
+            <img *ngIf="msg.status === 'pending'" style="width: 30vw" [src]="" alt="">
+          </div>
+          <div *ngSwitchCase="10" (click)="openFile(msg.message, msg.messageId)">
+            <ion-icon name="document"></ion-icon>
+            点击下载并查看
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<!--<ion-footer no-border>-->
+<ion-footer no-border [style.height]="showEmojiPicker ? '290px' : '110px'">
+  <ion-grid class="input-wrap">
+    <ion-row>
+      <ion-col col-9>
+        <ion-textarea #chat_input placeholder="" [(ngModel)]="editorMsg" (keyup.enter)="sendMsg()"
+                      (focus)="onFocus()">
+        </ion-textarea>
+      </ion-col>
+      <ion-col col-3 style="text-align: center;">
+        <button class="send-button" (click)="sendMsg()">
+          发送
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-3>
+        <button (click)="audio()" class="emoji-button">
+          <img src="assets/imgs/voice.png" alt="">
+        </button>
+      </ion-col>
+      <ion-col col-3>
+        <button (click)="photo()" class="emoji-button">
+          <img src="assets/imgs/photo.png" alt="">
+        </button>
+      </ion-col>
+      <ion-col col-3>
+        <button (click)="video()" class="emoji-button">
+          <img src="assets/imgs/video.png" alt="">
+        </button>
+      </ion-col>
+      <ion-col col-3>
+        <button (click)="switchEmojiPicker()" class="emoji-button">
+          <img src="assets/imgs/emoji.png" alt="">
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <emoji-picker *ngIf="showEmojiPicker" [(ngModel)]="editorMsg"></emoji-picker>
+</ion-footer>

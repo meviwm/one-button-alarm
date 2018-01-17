@@ -1,0 +1,35 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content>
+  <div class="content-filter"></div>
+  <div class="title">
+    <div class="logo">
+      <img src="" alt="">
+    </div>
+    <div class="text">一键报警系统</div>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-8>
+        <ion-input placeholder="" (focus)="onFocus()" [(ngModel)]="phoneNumber"></ion-input>
+      </ion-col>
+      <ion-col col-4>
+        <button class="get-code" (click)="getCode()" [disabled]="getCodeDisable">{{waitText}}</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-input placeholder="请输入验证码" (focus)="onFocus()" [(ngModel)]="code"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <button class="login" (click)="login()">登录</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,22 @@
+<ion-content>
+    <div class="filter-bg">
+        <img src="assets/imgs/login-bg.jpg" alt="">
+    </div>
+    <!-- <div class="title">成都树德中学</div> -->
+    <div class="button-box">
+        <div class="alarm-button" (click)="createAlarm()"><span>点击报警</span></div>
+        <!-- <div class="after"></div> -->
+    </div>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6 navPush="AlarmHistoryPage">
+                <img src="assets/imgs/alarm-history.png" alt="">
+                <div>报警记录</div>
+            </ion-col>
+            <ion-col col-6 navPush="PersonalCenterPage">
+                <img src="assets/imgs/personal-center.png" alt="">
+                <div>个人中心</div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
